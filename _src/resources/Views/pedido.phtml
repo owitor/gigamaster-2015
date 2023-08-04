@@ -1,0 +1,48 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="" method="post">
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label for="inputEmail4" class="col-form-label">Nota Fiscal</label>
+                        <input type="text" name="notafiscal" class="form-control">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="inputEmail4" class="col-form-label">Valor Frete em Reais</label>
+                        <input type="number" name="valorfrete" class="form-control">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label for="inputEmail4" class="col-form-label">Desconto em Reais</label>
+                        <input type="number" name="desconto" class="form-control">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-6 item">
+                        <label for="inputEmail4" class="col-form-label">Produto</label>
+                        <select class="form-control" name="idProduto">
+                            <?php foreach ($data as $produto): ?>
+                                <option value="<?= $produto['id'] ?>"><?= $produto['nome'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label for="inputEmail4" class="col-form-label">Quantidade Item</label>
+                        <input type="number" name="quantidadeItem" class="form-control">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label for="inputEmail4" class="col-form-label">Valor Total</label>
+                        <input type="number" name="valortotal" class="form-control">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+

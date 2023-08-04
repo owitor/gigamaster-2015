@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Produtos Disponiveis/Cadastrados</h2>
+            <p>
+                <a href="./produto" class="btn btn-lg btn-lock btn-blok btn-primary text-left">Adicionar Novo Produto</a>
+            </p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($data as $produto): ?>
+                        <tr>
+                            <td><?= $produto['id'] ?></td>
+                            <td><?= $produto['nome'] ?></td>
+                            <td><?= $produto['descricao'] ?></td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="<?= redirect('delProduto') ?>/<?= $produto['id'] ?>" class="btn btn-secondary btn-danger">Deletar</a>
+                                    <a href="<?= redirect('editProduto') ?>/<?= $produto['id'] ?>" class="btn btn-secondary btn-success">Editar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

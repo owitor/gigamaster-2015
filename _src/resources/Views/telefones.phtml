@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Telefones Cadastrados</h2>
+            <p>
+                <a href="<?= redirect('telefone')?>" class="btn btn-lg btn-lock btn-blok btn-primary text-left">Adicionar Novo Telefone</a>
+            </p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>DDD</th>
+                        <th>Numero</th>
+                        <th>Descrição</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($data as $telefone): ?>
+                        <tr>
+                            <td><?= $telefone['id'] ?></td>
+                            <td><?= $telefone['ddd'] ?></td>
+                            <td><?= $telefone['numero'] ?></td>
+                            <td><?= $telefone['referencia'] ?></td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="<?= redirect('delTelefone') ?>/<?= $telefone['id'] ?>" class="btn btn-secondary btn-danger">Deletar</a>
+                                    <a href="<?= redirect('editTelefone') ?>/<?= $telefone['id'] ?>" class="btn btn-secondary btn-success">Editar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

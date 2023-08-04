@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Voce é o fornecedor: Witor</h2>
+            <p>
+                <a href="./editFornecedor/<?= $data['id'] ?>" class="btn btn-lg btn-lock btn-blok btn-primary text-left">Edite suas informações</a>
+            </p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Cidade</th>
+                        <th>Endereço</th>
+                        <th>Bairro</th>
+                        <th>Numero</th>
+                    </tr>                    
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?= $data['id'] ?></td>
+                        <td><?= $data['nome'] ?></td>
+                        <td><?= $data['descricao'] ?></td>
+                        <td><?= $data['cidade'] ?></td>
+                        <td><?= $data['endereco'] ?></td>
+                        <td><?= $data['bairro'] ?></td>
+                        <td><?= $data['numero'] ?></td>
+                    </tr>         
+                </tbody>
+            </table>
+
+            <h2>E-mail</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <th>E-mail</th>
+                        <th>E-mail Referencia</th>
+                    </tr>                    
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?= $data['idEmail'] ?></td>
+                        <td><?= $data['email'] ?></td>
+                        <td><?= $data['referenciaEmail'] ?></td>
+                    </tr>         
+                </tbody>
+            </table>
+
+            <h2>Telefones</h2>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Telefone DDD</th>
+                        <th>Telefone Numero</th>
+                        <th>Telefone Referencia</th>
+                    </tr>                    
+                </thead>
+                <tbody>
+                    <?php foreach ($data['telefones'] as $telefone): ?>
+                        <tr>
+                            <td><?= $telefone['id'] ?></td>
+                            <td><?= $telefone['ddd'] ?></td>
+                            <td><?= $telefone['numero'] ?></td>
+                            <td><?= $telefone['referencia'] ?></td>
+                        </tr>         
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

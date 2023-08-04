@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Pedidos</h2>
+            <p>
+                <a href="<?= redirect('addPedido') ?>" class="btn btn-lg btn-lock btn-blok btn-primary text-left">Adicionar Novo Pedido</a>
+            </p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>DataHora</th>
+                        <th>Nota Fiscal</th>
+                        <th>Valor Frete</th>
+                        <th>Desconto</th>
+                        <th>Valor Total</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($data['pedidos'] as $pedido): ?>
+                        <tr>
+                            <td><?= $pedido['id'] ?></td>
+                            <td>
+                                <?php
+                                foreach ($data['produtos'] as $produto):
+                                    if ($produto['id'] === $pedido['idProduto']):
+                                        echo $produto['nome'];
+                                    endif;
+                                endforeach;
+                                ?>
+                            </td>
+                            <td><?= $pedido['quantidadeItem'] ?></td>
+                            <td><?= $pedido['datahora'] ?></td>
+                            <td><?= $pedido['notafiscal'] ?></td>
+                            <td><?= $pedido['valorfrete'] ?></td>
+                            <td><?= $pedido['desconto'] ?></td>
+                            <td><?= $pedido['valortotal'] ?></td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="<?= redirect('delProduto') ?>/<?= $pedido['id'] ?>" class="btn btn-secondary btn-danger">Deletar</a>
+                                    <a href="<?= redirect('editProduto') ?>/<?= $pedido['id'] ?>" class="btn btn-secondary btn-success">Editar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

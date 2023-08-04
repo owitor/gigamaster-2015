@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Email Cadastrado</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Referencia</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?= $data['id'] ?></td>
+                        <td><?= $data['email'] ?></td>
+                        <td><?= $data['referencia'] ?></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="<?= redirect('editEmail') ?>/<?= $data['id'] ?>" class="btn btn-secondary btn-success">Editar</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

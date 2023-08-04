@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-12"><br/>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="<?= redirect('telefones')?>/<?=$data['id']?>" class="btn btn-primary">Telefones</a>
+                    <a href="<?= redirect('email')?>/<?=$data['id']?>" class="btn btn-success">E-mail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="" method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputNome" class="col-form-label">Nome</label>
+                        <input type="text" value="<?= $data['nome'] ?>" class="form-control" id="inputNome" name="nome">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputeDescricao" class="col-form-label">Descrição</label>
+                    <textarea rows="10" id="inputeDescricao" class="form-control" name="descricao">
+                        <?= $data['descricao'] ?>
+                    </textarea>
+                </div>
+                <div class="form-row">
+
+                    <div class="form-group col-md-4">
+                        <label for="inputCidade" class="col-form-label">Cidade</label>
+                        <input type="text" name="cidade" value="<?= $data['cidade'] ?>"  class="form-control" id="inputCidade">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEndereco" class="col-form-label">Endereço  </label>
+                        <input type="text" name="endereco" value="<?= $data['endereco'] ?>" class="form-control" id="inputEndereco">
+                    </div>
+                </div>
+                <div class="form-row">
+
+                    <div class="form-group col-md-4">
+                        <label for="inputBairro" class="col-form-label">Bairro</label>
+                        <input type="text" name="bairro" value="<?= $data['bairro'] ?>" class="form-control" id="inputBairro">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputNumero" class="col-form-label">Numero</label>
+                        <input type="text" name="numero" value="<?= $data['numero'] ?>" class="form-control" id="inputNumero">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+        </div>
+    </div>
+</div>
